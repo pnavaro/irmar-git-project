@@ -218,3 +218,6 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+slidy.html
+.ipynb_checkpoints/git_slides-checkpoint.ipynb
+beamer.pdf

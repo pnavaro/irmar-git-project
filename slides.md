@@ -1,5 +1,5 @@
 % Quick review of Git
-% Pierre Navaro}
+% Pierre Navaro
 % Institut de Mathematique de Rennes
 
 # About Dropbox
@@ -49,7 +49,7 @@
 
 
 # Distributed Version Control Systems
-![Git](git)
+![Git](git.png)
 - Clients fully mirror the repository.
 - You can collaborate with different groups of people in different ways simultaneously within the same project.
 - No need of network connection.
@@ -77,7 +77,7 @@ Settings are saved on the computer for all your git repositories.
 
 # Four File status in the repository
 
-![Status](18333fig0201-tn)
+![Status](18333fig0201-tn.png)
 
 # Initializing a Repository in an Existing Directory
 
@@ -105,7 +105,6 @@ nothing added to commit but untracked files present
 (use "git add" to track)
 ```
 
-
 # Adding files in your repository
 
 git add document.tex
@@ -128,15 +127,17 @@ git commit -m 'Initial project version'}@>
 
 # Cloning a New Directory
 
-
+```
 git clone git@git.math.cnrs.fr:plm/navaro/projet
 Cloning into 'projet'...
 Initialized empty Git repository in /git/repositories/plm/navaro/projet.git/
 warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
+```
 
 Now you can add and commit your files.
 
+```
 cd projet
 ./article/*
 git add document.tex
@@ -150,20 +151,23 @@ On branch master
 Your branch is based on 'origin/master', but the upstream is gone.
   (use "git branch --unset-upstream" to fixup)
 nothing to commit, working directory clean
+```
 
 # Synchronizing your files on the server
 
  By default you are on the "master" branch.
 
+```
 git branch
 * master
 Upload your files to the server:
 git push origin master
 To git@git.math.cnrs.fr:plm/navaro/projet
  * [new branch]      master -> master
+```
 
 # Git Workflow
-![Four stages](four_stages)
+![Four stages](four_stages.png)
 
 # Cloning an Existing Directory
 Now i change my computer.
@@ -231,8 +235,7 @@ index a608114..e69de29 100644
 --- a/document.tex
 +++ b/document.tex
 @@ -1,3 +0,0 @@
--Exemple Git pour la journ�e de rentr�e
-
+-Exemple Git pour la journee de rentree
 
 # Locally saving your modifications
 
@@ -251,15 +254,15 @@ Changes to be committed:
 Now save your work on the local branch.
 
 ```
-git commit -m 'Some modification is available'}@>
+git commit -m 'Some modification is available
 [pierre-branch 8c6bf81] Some modification is available
  1 file changed, 3 insertions(+)
 ```
 
 # Fast commit
 
-![height=1.2in](index1)
-![height=1.2in](index2)
+![Index1](index1.png)
+![Index2](index2.png)
 
 Use it carefully!
 
@@ -318,26 +321,25 @@ git merge master          (update your branch)
 If you have conflict, no problem just do :
 git mergetool
 A nice editor helps you to choose the right version. Close and :
-git commit -m 'Update and fixed conflicts'}@>
+git commit -m 'Update and fixed conflicts'
 ```
 
 # Git cycle on a single branch
 
-![height=2.5in](git_cycle.png)
-
+![Cycle](git_cycle.png)
 
 
 # Progressive-stability branching
 
-![height=1.5in](lr-branches-2.png)
+![Branches](lr-branches-2.png)
 
 # GitHub Desktop - Modifications view
 
-![height=3.in](desktop.png)
+![Desktop](desktop.png)
 
 # GitHub Desktop - History view
 
-![height=3.in](desktop2.png)
+![Desktop2](desktop2.png)
 
 # Why Git?
 Tracking and controlling changes in the software.
@@ -352,4 +354,4 @@ Tracking and controlling changes in the software.
 # Some hints.
 
 - Install bash-completion and source git-prompt.sh.
-- use GitHub Desktop \url{https://desktop.github.com/}
+- use [GitHub Desktop](https://desktop.github.com/)
