@@ -1,11 +1,11 @@
 % Quick review of Git
 % Pierre Navaro}
-% Institut de Mathématique de Rennes
+% Institut de Mathematique de Rennes
 
 # About Dropbox
 
-- Dropbox versioning is not free. 
-- Only keep your edits over a period of 30 days. 
+- Dropbox versioning is not free.
+- Only keep your edits over a period of 30 days.
 - Privacy and Security ?
 - No differences display.
 - The service have the right to delete information from free and inactive accounts.
@@ -13,20 +13,19 @@
 
 # New products based on a git server for collaborating writing.
 
-- ShareLaTeX \url{https://fr.sharelatex.com}
-- Authorea \url{https://www.authorea.com}
-- Overleaf \url{https://www.overleaf.com}
-
+- ShareLaTeX (https://fr.sharelatex.com)
+- Authorea (https://www.authorea.com)
+- Overleaf (https://www.overleaf.com)
 
 # About Version Control
 
 - Records changes to a file or set of files over time.
-- You can recall specific versions later. 
+- You can recall specific versions later.
 - You can use it with nearly any type of file on a computer.
 - This is the better way to collaborate on the same document.
 - Every change is committed with an author and a date.
-- Figures are downloaded from Pro Git book : \url{http://git-scm.com/book}.
-- "Become a git guru" tutorial \url{https://www.atlassian.com/git/tutorials/}.
+- Figures are downloaded from [Pro Git book](http://git-scm.com/book).
+- "Become a git guru" tutorial (https://www.atlassian.com/git/tutorials).
 
 
 # Local Version Control Systems
@@ -34,7 +33,7 @@
 ![Loca](local.png)
 
 - One of the most saving popular was a system called RCS
-- Available with the Developer Tools with Mac OS X 
+- Available with the Developer Tools with Mac OS X
 - Collaboration is not really possible.
 
 
@@ -43,7 +42,7 @@
 ![CVS](cvs.png)
 - Clients check out files from a central place.
 - You know what everyone else on the project is doing
-- A single server contains all the versioned files. 
+- A single server contains all the versioned files.
 - For many years, this has been the standard (CVS, SVN).
 - You always need network connection.
 - If the server is corrupted, with no backup, you lose everything !
@@ -61,9 +60,9 @@
 
 ```bash
 git config ---global user.name "Pierre Navaro"
-git config ---global user.email "pierre.navaro@univ-rennes1.fr"}@>
-git config ---global core.editor mvim}@>
-git config ---global merge.tool opendiff }@>
+git config ---global user.email "pierre.navaro@univ-rennes1.fr"
+git config ---global core.editor mvim
+git config ---global merge.tool opendiff
 ```
 
 ```bash
@@ -75,7 +74,6 @@ git config ---list
 ```
 
 Settings are saved on the computer for all your git repositories.
-
 
 # Four File status in the repository
 
@@ -103,17 +101,16 @@ Untracked files:
 	document.tex
 	figure.png
 
-nothing added to commit but untracked files present 
+nothing added to commit but untracked files present
 (use "git add" to track)
 ```
 
 
 # Adding files in your repository
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git add document.tex }@>
-$ <@\textcolor{blue}{ git add figure.png}@>
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git status}@>
+
+git add document.tex
+git add figure.png
+git status
 On branch master
 Initial commit
 Changes to be committed:
@@ -121,206 +118,165 @@ Changes to be committed:
 
 	new file:   document.tex
 	new file:   figure.png
-\end{lstlisting}
-\pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git commit -m 'Initial project version'}@>
+
+git commit -m 'Initial project version'}@>
 [master (root-commit) 9d23b49] Initial project version
  2 files changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 document.tex
  create mode 100644 figure.png
-\end{lstlisting}
-\end{frame}
 
-%==============================================================================
 
-\begin{frame}[fragile]{Cloning a New Directory }
-\pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git clone git@git.math.cnrs.fr:plm/navaro/projet}@>
+# Cloning a New Directory
+
+
+git clone git@git.math.cnrs.fr:plm/navaro/projet
 Cloning into 'projet'...
 Initialized empty Git repository in /git/repositories/plm/navaro/projet.git/
 warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
-\end{lstlisting}
-\pause Now you can add and commit your files.
-\begin{lstlisting}
-$ <@\textcolor{blue}{cd projet/}@>
-$ <@\textcolor{blue}{cp ../article/*}@>
-$ <@\textcolor{blue}{git add document.tex}@>
-$ <@\textcolor{blue}{git add figure.png}@>
-$ <@\textcolor{blue}{git commit -m 'Initial version of the project'}@>
-\end{lstlisting}\pause \alert{Your files are NOT present on the server!} \pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git status}@>
+
+Now you can add and commit your files.
+
+cd projet
+./article/*
+git add document.tex
+git add figure.png
+git commit -m 'Initial version of the project'
+
+Your files are NOT present on the server!
+
+git status
 On branch master
 Your branch is based on 'origin/master', but the upstream is gone.
   (use "git branch --unset-upstream" to fixup)
 nothing to commit, working directory clean
-\end{lstlisting}
-\end{frame}
 
-%==============================================================================
+# Synchronizing your files on the server
 
-\begin{frame}[fragile]{Synchronizing your files on the server }
- By default you are on the "master" branch. 
- \pause
- \begin{lstlisting}
-$ <@\textcolor{blue}{ git branch}@>
+ By default you are on the "master" branch.
+
+git branch
 * master
-\end{lstlisting} \pause
 Upload your files to the server:
- \pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git push origin master}@>
-Counting objects: 3, done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 246 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
+git push origin master
 To git@git.math.cnrs.fr:plm/navaro/projet
  * [new branch]      master -> master
-\end{lstlisting}
-\end{frame}
 
-%==============================================================================
-\begin{frame}{Git Workflow}
-\begin{center}
-\includegraphics[height=1.8in]{four_stages}
-\end{center}
-\end{frame}
+# Git Workflow
+![Four stages](four_stages)
 
-%==============================================================================
-
-\begin{frame}[fragile]{Cloning an Existing Directory }
-Now i change my computer. \pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git clone git@git.math.cnrs.fr:plm/navaro/projet}@>
+# Cloning an Existing Directory
+Now i change my computer.
+```
+git clone git@git.math.cnrs.fr:plm/navaro/projet
 Cloning into 'projet'...
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (3/3), 246 bytes | 0 bytes/s, done.
 Checking connectivity... done.
-\end{lstlisting}
-\pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{cd projet/}@>
-$ <@\textcolor{blue}{ls}@>
+cd projet
+ls
 document.tex	figure.png
-\end{lstlisting}\pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git log}@>
+git log
 commit 7cef21ac9119ef2fb97065c9e5549550e2f603fd
 Author: Pierre Navaro <pierre.navaro@univ-rennes1.fr>
 Date:   Fri Oct 2 13:51:43 2015 +0200
 
     Initial version of the project
-\end{lstlisting}
-\end{frame}
+```
 
-%==============================================================================
+# Display and Create a Branch
 
-\begin{frame}[fragile]{Display and Create a Branch }
 Display all branches :
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git branch -a}@>
+```
+git branch -a
 * master
   remotes/origin/HEAD -> origin/master
   remotes/origin/master
-\end{lstlisting}
-\pause Create your own branch and switch:
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git branch pierre-branch}@>
-$ <@\textcolor{blue}{ git checkout pierre-branch}@>
-\end{lstlisting}\pause
-\begin{lstlisting}
+```
+
+Create your own branch and switch:
+```
+git branch pierre-branch}@>
+git checkout pierre-branch}@>
+```
+
 Switched to branch 'pierre-branch'
-\end{lstlisting}
-\pause Check
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git branch}@>
+
+```
+git branch
   master
 * pierre-branch
-\end{lstlisting}
-\alert{Files could be different or non existant between branches but are at the same place on the file system}
-\end{frame}
+Files could be different or non existant between branches but are at the same place on the file system
 
 
-%==============================================================================
+# Contributing
 
-\begin{frame}[fragile]{Contributing }
-Modify the file document.tex \pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git status}@>
+Modify the file document.tex
+
+```
+git status
 On branch pierre-branch
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 	modified:   document.tex
 no changes added to commit (use "git add" and/or "git commit -a")
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git diff}@>
+
+```
+git diff
 diff --git a/document.tex b/document.tex
 index a608114..e69de29 100644
 --- a/document.tex
 +++ b/document.tex
 @@ -1,3 +0,0 @@
--Exemple Git pour la journŽe de rentrŽe
-\end{lstlisting}
-\end{frame}
+-Exemple Git pour la journï¿½e de rentrï¿½e
 
-\begin{frame}[fragile]{Locally saving your modifications}
-\pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git add document.tex}@>
- \end{lstlisting}
-\pause Checking which files are ready to be committed.
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git status}@>
+
+# Locally saving your modifications
+
+```
+git add document.tex
+```
+Checking which files are ready to be committed.
+
+```
+git status
 On branch pierre-branch
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 	modified:   document.tex
-\end{lstlisting}
-\pause Now save your work on the local branch.
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git commit -m 'Some modification is available'}@>
+```
+Now save your work on the local branch.
+
+```
+git commit -m 'Some modification is available'}@>
 [pierre-branch 8c6bf81] Some modification is available
  1 file changed, 3 insertions(+)
-\end{lstlisting}
+```
 
-\end{frame}
+# Fast commit
 
-%==============================================================================
+![height=1.2in](index1)
+![height=1.2in](index2)
 
-\begin{frame}[fragile]{Fast commit}
+Use it carefully!
 
-\begin{center}
-\includegraphics[height=1.2in]{index1}
-\includegraphics[height=1.2in]{index2}
-\end{center}
-\alert{Use it carefully!}
+How to share your work and make it available on the server?
 
-\pause How to share your work and make it available on the server?
+# Option 1 : Merge to the main branch and push
 
-\end{frame}
-
-%==============================================================================
-
-\begin{frame}[fragile]{Option 1 : Merge to the main branch and push}
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git checkout master }@>
+```
+git checkout master
 Switched to branch 'master'
 Your branch is up-to-date with 'origin/master'.
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git merge pierre-branch }@>
+git merge pierre-branch
 Updating 7cef21a..8c6bf81
 Fast-forward
  document.tex | 3 +++
  1 file changed, 3 insertions(+)
- \end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git push origin master }@>
+git push origin master
 Counting objects: 3, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.
@@ -328,109 +284,72 @@ Writing objects: 100% (3/3), 351 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To git@git.math.cnrs.fr:plm/navaro/projet
    7cef21a..8c6bf81  master -> master
-\end{lstlisting}
-\end{frame}
+```
 
-%==============================================================================
+# Option 2 : Push your branch to the server
 
-\begin{frame}[fragile]{ Option 2 : Push your branch to the server}
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git checkout pierre-branch }@>
+```
+git checkout pierre-branch
 Switched to branch 'pierre-branch'
- \end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{git push origin pierre-branch }@>
+git push origin pierre-branch
 Total 0 (delta 0), reused 0 (delta 0)
 To git@git.math.cnrs.fr:plm/navaro/projet
  * [new branch]      pierre-branch -> pierre-branch
-\end{lstlisting}
-\pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git branch -a}@>
+git branch -a
   master
 * pierre-branch
   remotes/origin/HEAD -> origin/master
   remotes/origin/master
   remotes/origin/pierre-branch
-\end{lstlisting}
-\end{frame}
+```
 
-%==============================================================================
- 
-\begin{frame}[fragile]{Updating from the Repository}
+# Updating from the Repository
+
 The master branch has changed. To get all new updates :
-\pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git checkout master }@>       (change to master)
+
+```
+git checkout master      (change to master)
 Switched to branch 'master'
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git fetch origin  }@>         (download changes from repository)
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git merge origin/master }@>   (update local branch master)
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git checkout pierre-branch }@>(back to your branch)
+git fetch origin         (download changes from repository)
+git merge origin/master  (update local branch master)
+git checkout pierre-branch (back to your branch)
 Switched to branch 'pierre-branch'
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git merge master }@>          (update your branch)
- \end{lstlisting}
-\pause If you have conflict, no problem just do :
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git mergetool}@>
- \end{lstlisting}
+git merge master          (update your branch)
+If you have conflict, no problem just do :
+git mergetool
 A nice editor helps you to choose the right version. Close and :
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git commit -m 'Update and fixed conflicts'}@>
-\end{lstlisting}
-\end{frame}
+git commit -m 'Update and fixed conflicts'}@>
+```
 
-%==============================================================================
-\begin{frame}{Git cycle on a single branch}
-\begin{center}
-\includegraphics[height=2.5in]{git_cycle}
-\end{center}
-\end{frame}
+# Git cycle on a single branch
+
+![height=2.5in](git_cycle.png)
 
 
 
-%==============================================================================
-\begin{frame}{Progressive-stability branching}
-\begin{center}
-\includegraphics[height=1.5in]{lr-branches-2}
-\end{center}
-\end{frame}
+# Progressive-stability branching
 
-%==============================================================================
-\begin{frame}{GitHub Desktop - Modifications view}
-\begin{center}
-\includegraphics[height=3.in]{desktop}
-\end{center}
-\end{frame}
+![height=1.5in](lr-branches-2.png)
 
-%==============================================================================
-\begin{frame}{GitHub Desktop - History view}
-\begin{center}
-\includegraphics[height=3.in]{desktop2}
-\end{center}
-\end{frame}
+# GitHub Desktop - Modifications view
 
-%==============================================================================
-\begin{frame}{Why Git?}
+![height=3.in](desktop.png)
+
+# GitHub Desktop - History view
+
+![height=3.in](desktop2.png)
+
+# Why Git?
 Tracking and controlling changes in the software.
-\begin{itemize}[<+->]
-\item[\color{green}\Checkmark] Branches : Frictionless Context Switching, Role-Based Codelines. 
-\item[\color{green}\Checkmark] Everything is local : Git is fast.
-\item[\color{green}\Checkmark] Multiple Backups.
-\item[\color{green}\Checkmark] It's impossible to get anything out of Git other than the exact bits you put in.
-\item[\color{green}\Checkmark] Staging Area : intermediate index between working directory and repository.
-\item[\color{red}\XSolidBrush]  Sometimes confusing for new users.
-\end{itemize}
-\pause Some tips.
-\begin{itemize}
-\item Install bash-completion and source git-prompt.sh.
-\item use GitHub Desktop \url{https://desktop.github.com/}
-\end{itemize}
-\end{frame}
 
+- Branches : Frictionless Context Switching, Role-Based Codelines.
+- Everything is local : Git is fast.
+- Multiple Backups.
+- It's impossible to get anything out of Git other than the exact bits you put in.
+- Staging Area : intermediate index between working directory and repository.
+- Sometimes confusing for new users.
 
+# Some hints.
 
-\end{document}
-
+- Install bash-completion and source git-prompt.sh.
+- use GitHub Desktop \url{https://desktop.github.com/}
