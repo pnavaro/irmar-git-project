@@ -1,128 +1,53 @@
-\documentclass[handout]{beamer} % 
-%\documentclass{beamer}          
-\beamertemplatenavigationsymbolsempty
+% Quick review of Git
+% Pierre Navaro}
+% Institut de MathÈmatique de Rennes
 
-\usepackage[applemac]{inputenc}
-\usepackage{verbatim}
-\usepackage{graphicx}
-\usepackage{courier}
-%\usepackage{pgfpages} 
-%\usepackage{handoutWithNotes}
-%\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm] 
+# About Dropbox
 
-\usetheme{Warsaw}
-\title{Quick review of Git }
-\subtitle{Réunion de rentrée 2015}
-\author{Pierre Navaro}
-\institute{Institut de Mathématique de Rennes}
-\date{\today}
+- Dropbox versioning is not free. 
+- Only keep your edits over a period of 30 days. 
+- Privacy and Security ?
+- No differences display.
+- The service have the right to delete information from free and inactive accounts.
+- Users are not allowed to perform encryption.
 
-\usepackage{xcolor}
-\usepackage[procnames]{listings}
-\usepackage{textcomp}
-\usepackage{setspace}
-\usepackage{palatino}
-\usepackage{bera}
-\usepackage{bbding}
-\renewcommand{\lstlistlistingname}{Code Listings}
-\renewcommand{\lstlistingname}{Code Listing}
-\definecolor{gray}{gray}{0.5}
-\definecolor{green}{rgb}{0,0.5,0}
-\definecolor{lightgreen}{rgb}{0,0.7,0}
-\definecolor{purple}{rgb}{0.5,0,0.5}
-\definecolor{darkred}{rgb}{0.5,0,0}
-\definecolor{lightblue}{rgb}{0,191,255}
+# New products based on a git server for collaborating writing.
 
-\lstnewenvironment{fortran}[1][]{
- \lstset{language=Fortran,
- basicstyle=\ttfamily\scriptsize\setstretch{1},
- emph={Cf2py},emphstyle=\color{red},
- emph={[3]sqrt,sin,cos,tan},emphstyle={[3]\color{darkred}},
- emph={[4]sll_int32,sll_real64,SLL_ALLOCATE,SLL_ASSERT},emphstyle={[4]\color{purple}\textbf},
- keywordstyle=\color{red}\textbf,
- commentstyle=\color{green}\itshape,
- procnamekeys={subroutine, function},
- procnamestyle=\color{blue}\textbf
-}}{}
+- ShareLaTeX \url{https://fr.sharelatex.com}
+- Authorea \url{https://www.authorea.com}
+- Overleaf \url{https://www.overleaf.com}
 
-\lstset{    basicstyle=\ttfamily\bfseries\footnotesize ,     escapeinside={<@}{@>}}
-\useinnertheme{circles}
-\newenvironment{proenv}{\only{\setbeamercolor{local structure}{fg=green}}}{}
-\newenvironment{conenv}{\only{\setbeamercolor{local structure}{fg=red}}}{}
 
-\usepackage{media9}
-\usepackage{minted}
+# About Version Control
 
-\begin{document}
+- Records changes to a file or set of files over time.
+- You can recall specific versions later. 
+- You can use it with nearly any type of file on a computer.
+- This is the better way to collaborate on the same document.
+- Every change is committed with an author and a date.
+- Figures are downloaded from Pro Git book : \url{http://git-scm.com/book}.
+- "Become a git guru" tutorial \url{https://www.atlassian.com/git/tutorials/}.
 
-%==============================================================================
-\begin{frame}
-\titlepage
-\end{frame}
 
-\begin{frame}{About Dropbox}
-\begin{itemize}[<+->]
-\item Dropbox versioning is not free. 
-\item Only keep your edits over a period of 30 days. 
-\item Privacy and Security ?
-\item No differences display.
-\item The service have the right to delete information from free and inactive accounts.
-\item Users are not allowed to perform encryption.
-\end{itemize}
-\pause New products based on a git server for collaborating writing.
-\begin{itemize}
-\item ShareLaTeX \url{https://fr.sharelatex.com}
-\item Authorea \url{https://www.authorea.com}
-\item Overleaf \url{https://www.overleaf.com}
-\end{itemize}
-\end{frame}
+# Local Version Control Systems
 
-%==============================================================================
+![Loca](local.png)
 
-\begin{frame}{About Version Control}
-\begin{itemize}[<+->]
-\item Records changes to a file or set of files over time.
-\item You can recall specific versions later. 
-\item You can use it with nearly any type of file on a computer.
-\item This is the better way to collaborate on the same document.
-\item Every change is committed with an author and a date.
-\item Figures are downloaded from Pro Git book : \url{http://git-scm.com/book}.
-\item "Become a git guru" tutorial \url{https://www.atlassian.com/git/tutorials/}.
-\end{itemize}
-\end{frame}
+- One of the most saving popular was a system called RCS
+- Available with the Developer Tools with Mac OS X 
+- Collaboration is not really possible.
 
-%==============================================================================
 
-\begin{frame}{Local Version Control Systems}
-\begin{center}
-\includegraphics[height=1.8in]{local}
-\end{center}
-\pause
-\begin{itemize}[<+->]
-\item One of the most saving popular was a system called RCS
-\item[\color{green}\Checkmark]  Available with the Developer Tools with Mac OS X 
-\item[\color{red}\XSolidBrush]  Collaboration is not really possible.
-\end{itemize}
-\end{frame}
+# Centralized Version Control Systems
 
-%==============================================================================
+![CVS](cvs.png)
+- Clients check out files from a central place.
+- You know what everyone else on the project is doing
+- A single server contains all the versioned files. 
+- For many years, this has been the standard (CVS, SVN).
+- You always need network connection.
+- If the server is corrupted, with no backup, you lose everything !
 
-\begin{frame}{Centralized Version Control Systems}
-\begin{center}
-\includegraphics[height=1.5in]{cvs}
-\end{center}
-\pause
-\begin{itemize}[<+->]
-\item[\color{green}\Checkmark]   Clients check out files from a central place.
-\item[\color{green}\Checkmark]   You know what everyone else on the project is doing
-\item[\color{green}\Checkmark]   A single server contains all the versioned files. 
-\item[\color{green}\Checkmark]  For many years, this has been the standard (CVS, SVN).
-\item[\color{red}\XSolidBrush]  You always need network connection.
-\item[\color{red}\XSolidBrush]  If the server is corrupted, with no backup, you lose everything !
-\end{itemize}
-\end{frame}
-
-%==============================================================================
 
 \begin{frame}{Distributed Version Control Systems}
 \begin{center}
