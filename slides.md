@@ -49,59 +49,52 @@
 - If the server is corrupted, with no backup, you lose everything !
 
 
-\begin{frame}{Distributed Version Control Systems}
-\begin{center}
-\includegraphics[height=2in]{git}
-\end{center}
-\pause
-\begin{itemize}[<+->]
-\item[\color{green}\Checkmark]   Clients fully mirror the repository.
-\item[\color{green}\Checkmark]   You can collaborate with different groups of people in different ways simultaneously within the same project.
-\item[\color{green}\Checkmark]   No need of network connection.
-\item[\color{green}\Checkmark]   Multiple backups.
-\end{itemize}
-\end{frame}
+# Distributed Version Control Systems
+![Git](git)
+- Clients fully mirror the repository.
+- You can collaborate with different groups of people in different ways simultaneously within the same project.
+- No need of network connection.
+- Multiple backups.
 
 
-\begin{frame}[fragile]{Configure Git }
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git config ---global user.name "Pierre Navaro"}@>
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git config ---global user.email "pierre.navaro@univ-rennes1.fr"}@>
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git config ---global core.editor mvim}@>
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git config ---global merge.tool opendiff }@>
-\end{lstlisting}
-\pause
-\begin{lstlisting}
-$ <@\textcolor{blue}{ git config ---list}@>
-user.name=Pierre Navaro
-user.email=pierre.navaro@univ-rennes1.fr
-core.editor=mvim
-merge.tool=opendiff
-\end{lstlisting}
+# Configure Git
+
+```bash
+git config ---global user.name "Pierre Navaro"
+git config ---global user.email "pierre.navaro@univ-rennes1.fr"}@>
+git config ---global core.editor mvim}@>
+git config ---global merge.tool opendiff }@>
+```
+
+```bash
+git config ---list
+   user.name=Pierre Navaro
+   user.email=pierre.navaro@univ-rennes1.fr
+   core.editor=mvim
+   merge.tool=opendiff
+```
 
 Settings are saved on the computer for all your git repositories.
-\end{frame}
-%==============================================================================
-\begin{frame}{Four File status in the repository}
-\begin{center}
-\includegraphics[height=2in]{18333fig0201-tn}
-\end{center}
-\end{frame}
-%==============================================================================
 
-\begin{frame}[fragile]{Initializing a Repository in an Existing Directory }
-\begin{lstlisting}
-$ <@\textcolor{blue}{ cd article}@>
-$ <@\textcolor{blue}{ ls}@>
+
+# Four File status in the repository
+
+![Status](18333fig0201-tn)
+
+# Initializing a Repository in an Existing Directory
+
+```bash
+cd article
+ls
+```
+```
 document.tex	figure.png
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git init}@>
+```
+git init
+```
 Initialized empty Git repository in /Users/navaro/article/.git/
-\end{lstlisting}\pause\begin{lstlisting}
-$ <@\textcolor{blue}{ git status}@>
+```
+git status
 On branch master
 Initial commit
 Untracked files:
@@ -112,12 +105,10 @@ Untracked files:
 
 nothing added to commit but untracked files present 
 (use "git add" to track)
-\end{lstlisting}
-\end{frame}
+```
 
-%==============================================================================
 
-\begin{frame}[fragile]{Adding files in your repository }
+# Adding files in your repository
 \begin{lstlisting}
 $ <@\textcolor{blue}{ git add document.tex }@>
 $ <@\textcolor{blue}{ git add figure.png}@>
