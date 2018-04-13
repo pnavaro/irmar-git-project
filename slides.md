@@ -30,7 +30,7 @@
 
 # Local Version Control Systems
 
-![Loca](local.png)
+![Loca](local.png =600x)
 
 - One of the most saving popular was a system called RCS
 - Available with the Developer Tools with Mac OS X
