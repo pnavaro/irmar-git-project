@@ -222,3 +222,5 @@ slidy.html
 .ipynb_checkpoints/git_slides-checkpoint.ipynb
 beamer.pdf
 article/document.pdf
+
+cpp_project/.dep.inc
