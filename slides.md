@@ -27,7 +27,6 @@
 - Figures are downloaded from [Pro Git book](http://git-scm.com/book).
 - "Become a git guru" tutorial (https://www.atlassian.com/git/tutorials).
 
-
 # Local Version Control Systems
 
 ![Loca](local.png =600x)
@@ -35,7 +34,6 @@
 - One of the most saving popular was a system called RCS
 - Available with the Developer Tools with Mac OS X
 - Collaboration is not really possible.
-
 
 # Centralized Version Control Systems
 
@@ -47,14 +45,13 @@
 - You always need network connection.
 - If the server is corrupted, with no backup, you lose everything !
 
-
 # Distributed Version Control Systems
+
 ![Git](git.png)
 - Clients fully mirror the repository.
 - You can collaborate with different groups of people in different ways simultaneously within the same project.
 - No need of network connection.
 - Multiple backups.
-
 
 # Configure Git
 
@@ -82,8 +79,7 @@ Settings are saved on the computer for all your git repositories.
 # Initializing a Repository in an Existing Directory
 
 ```bash
-cd article
-ls
+ls article
 ```
 ```
 document.tex	figure.png
@@ -104,7 +100,6 @@ Untracked files:
 nothing added to commit but untracked files present
 (use "git add" to track)
 ```
-
 # Adding files in your repository
 
 git add document.tex
