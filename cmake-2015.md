@@ -16,20 +16,17 @@ ensemble logiciel opérationnel.
 - Outils python (setuptools, SCons, waf)
 - Outils Java (Maven, Ant)
 
-
 # Les outils CMake
 
-1. **CMake**: Makefile (make, make install, make clean), KDevelop3 Eclipse CDT, Visual Studio, Code::Blocks, Xcode.
-2. **CTest+CDash**: Gestion des test unitaires Diagnostics via un portail web.
-3. **CPack**: Création de paquet deb, rpm, pkg,
-tar.gz
+1. **CMake**: Unix Makefiles, KDevelop3 Eclipse CDT, Visual Studio, Code::Blocks, Xcode.
+2. **CTest+CDash**: Gestion des tests et diagnostics via un portail web.
+3. **CPack**: Création de paquet deb, rpm, pkg, tar.gz
 
 # Kitware quality software process
 
 Le fichier important : *CMakeLists.txt*
 
-
-```python
+```
 cpp_project/
 |-- Adresse.cpp
 |-- Adresse.h
@@ -124,7 +121,7 @@ MESSAGE([STATUS|WARNING|AUTHOR_WARNING|FATAL_ERROR|SEND_ERRO
 # Quelques variables utiles
 
 - top level directory of your build tree
-${CMAKE_BINARY_DIR} : 
+${CMAKE_BINARY_DIR} :
 - the top level source directory
 ${CMAKE_SOURCE_DIR}
 - place where CMake should put all executable files
