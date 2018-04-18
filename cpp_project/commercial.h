@@ -10,7 +10,8 @@ class Commercial : public Employe
 {
 	public:
 		// class constructor
-		Commercial(char* unNom, char* uneRue, int unCodePostal, char* uneVille, float unSalaireMensuel, int desVentes, float unTaux);
+		Commercial(const char* unNom, const char* uneRue, int unCodePostal,
+		const char* uneVille, float unSalaireMensuel, int desVentes, float unTaux);
 		Commercial();
                 Commercial(Commercial& other);
                 Commercial& operator=(Commercial& other);

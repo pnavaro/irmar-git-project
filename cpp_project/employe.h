@@ -10,7 +10,8 @@ class Employe : public Personne
 {
     public:
 		// class constructor
-		Employe(char* unNom, char* uneRue, int unCodePostal, char* uneVille, float unSalaireMensuel);
+		Employe(const char* unNom, const char* uneRue, int unCodePostal,
+		const char* uneVille, float unSalaireMensuel);
 		Employe();
                 Employe(Employe& other);
                 Employe& operator=(Employe& other);
@@ -22,7 +23,7 @@ class Employe : public Personne
 		virtual void saisir();
 		// No description
 		virtual void afficher();
-                //Méthode polymorphe qui renvoie un duplicata de Employe
+                //Mï¿½thode polymorphe qui renvoie un duplicata de Employe
                 virtual Employe* getClone() {return new Employe(*this);}
 	private:
 		// No description

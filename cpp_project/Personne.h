@@ -12,13 +12,13 @@ class Personne
         static int nbInstance; 
     public:
         // class constructor
-        Personne(char* unNom, char* uneRue, int unCodePostal, char* uneVille);
+        Personne(const char* unNom, const char* uneRue, int unCodePostal, const char* uneVille);
         // class default constructor
         Personne();
         // copy constructor
         Personne(Personne& other);
         Personne& operator=(Personne& other);
-        void setNom(char* unNom);
+        void setNom(const char* unNom);
         char* getNom();
         Adresse getAdresse();
         void setAdresse(Adresse uneAdresse);

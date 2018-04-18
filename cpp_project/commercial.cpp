@@ -4,7 +4,8 @@
 
 using namespace std;
 // class constructor
-Commercial::Commercial(char* nom, char* rue, int codePostal, char* ville, float salaireMensuel, int lesVentes, float leTaux)
+Commercial::Commercial(const char* nom, const char* rue, int codePostal, 
+const char* ville, float salaireMensuel, int lesVentes, float leTaux)
 :Employe(nom,rue,codePostal,ville,salaireMensuel)
 {
 	setVentesDuMois(lesVentes);

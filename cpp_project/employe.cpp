@@ -5,7 +5,8 @@
 using namespace std;
 
 // class constructor
-Employe::Employe(char* nom, char* rue, int codePostal, char* ville, float unSalaireMensuel)
+Employe::Employe(const char* nom, const char* rue, int codePostal,
+const char* ville, float unSalaireMensuel)
 :Personne(nom, rue, codePostal, ville)
 {
      SetsalaireMensuel(unSalaireMensuel);

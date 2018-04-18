@@ -19,7 +19,7 @@ Entreprise::Entreprise() {
 	nbEmploye = 0;
 }
 
-Entreprise::Entreprise(char *unNom)
+Entreprise::Entreprise(const char *unNom)
 {
 	setNom(unNom);
 	nbEmploye = 0;
@@ -51,7 +51,7 @@ Entreprise::~Entreprise() {
      delete tabPtrEmp[i];
 }
 
-void Entreprise::setNom(char* unNom)
+void Entreprise::setNom(const char* unNom)
 {
         strcpy(nom,unNom);
 }

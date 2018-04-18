@@ -10,16 +10,16 @@ class Adresse
     public:
         // accesseurs
         char*   getRue() ;
-        void    setRue( char* uneRue);
+        void    setRue( const char* uneRue);
         int     getCodePostal();
         void    setCodePostal(int unCodePostal);
         char*   getVille() ;
-        void    setVille( char* uneVille);
+        void    setVille( const char* uneVille);
         
         // constructeurs
         
         Adresse();
-        Adresse( char* uneRue, int unCodePostal, char* uneVille);
+        Adresse( const char* uneRue, int unCodePostal, const char* uneVille);
         Adresse& operator=(Adresse& other);
         Adresse(Adresse& other);
 
@@ -27,7 +27,6 @@ class Adresse
         
         void saisir();
         void afficher() ;
-	
     
 };
 #endif

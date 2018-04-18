@@ -9,7 +9,7 @@ using namespace std;
 int Personne::nbInstance = 0;
 
 // class constructor
-Personne::Personne(char* unNom, char* uneRue, int unCodePostal, char* uneVille)
+Personne::Personne(const char* unNom, const char* uneRue, int unCodePostal, const char* uneVille)
 :adresse(uneRue, unCodePostal, uneVille)
 {
 	setNom(unNom);
@@ -68,7 +68,7 @@ char* Personne::getNom()
 }
 
 // No description
-void Personne::setNom(char* unNom)
+void Personne::setNom(const char* unNom)
 {
 	strcpy(nom,unNom);
 }

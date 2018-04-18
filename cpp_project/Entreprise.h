@@ -16,13 +16,13 @@ private:
         int nbEmploye;
 public:
 	Entreprise();
-	Entreprise(char* unNom);
+	Entreprise(const char* unNom);
         Entreprise(Entreprise& other);
         Entreprise& operator=(Entreprise& other);
         ~Entreprise();
         int getNbEmploye();
         char* getNom();
-        void setNom(char* nom);
+        void setNom(const char* nom);
         void afficher();
         void addEmp(Employe* e);
 

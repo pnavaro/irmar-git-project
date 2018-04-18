@@ -9,7 +9,7 @@ char* Adresse::getRue()
     return rue;
 }
 
-void Adresse::setRue(char* uneRue)
+void Adresse::setRue(const char* uneRue)
 {
     strcpy(rue,uneRue);
 }
@@ -29,14 +29,14 @@ char* Adresse::getVille()
     return ville;
 }
 
-void Adresse::setVille(char* uneVille)
+void Adresse::setVille(const char* uneVille)
 {
     strcpy(ville,uneVille);
 }
 
 //constructeurs
 
-Adresse::Adresse(char* uneRue, int unCodePostal, char* uneVille)
+Adresse::Adresse(const char* uneRue, int unCodePostal, const char* uneVille)
 {
     strcpy(rue,uneRue);
     codePostal = unCodePostal;
