@@ -337,16 +337,31 @@ git commit -m 'Update and fixed conflicts'
 ![Desktop2](images/desktop2.png)
 
 # Why Git?
-Tracking and controlling changes in the software.
 
+- Tracking and controlling changes in the software.
 - Branches : Frictionless Context Switching, Role-Based Codelines.
 - Everything is local : Git is fast.
 - Multiple Backups.
 - It's impossible to get anything out of Git other than the exact bits you put in.
 - Staging Area : intermediate index between working directory and repository.
+
+## Why not 
 - Sometimes confusing for new users.
+- Crazy command line syntax
+- Simple tasks need so many commands
+- Git history is a bunch of lies
+- Power for the maintainer, at the expense of the contributor.
 
 # Some hints.
 
 - Install bash-completion and source git-prompt.sh.
 - use [GitHub Desktop](https://desktop.github.com/)
+
+- Showing which files have changed between git branches
+```git
+git diff --name-status master..branch
+```
+- Compare the master version of a file to my current branch version
+```git
+git diff mybranch master -- myfile.F90
+```
