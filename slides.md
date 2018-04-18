@@ -29,7 +29,7 @@
 
 # Local Version Control Systems
 
-![Loca](local.png =600x)
+![Loca](images/local.png =600x)
 
 - One of the most saving popular was a system called RCS
 - Available with the Developer Tools with Mac OS X
@@ -37,7 +37,7 @@
 
 # Centralized Version Control Systems
 
-![CVS](cvs.png)
+![CVS](images/cvs.png)
 - Clients check out files from a central place.
 - You know what everyone else on the project is doing
 - A single server contains all the versioned files.
@@ -47,7 +47,7 @@
 
 # Distributed Version Control Systems
 
-![Git](git.png)
+![Git](images/git.png)
 - Clients fully mirror the repository.
 - You can collaborate with different groups of people in different ways simultaneously within the same project.
 - No need of network connection.
@@ -74,7 +74,7 @@ Settings are saved on the computer for all your git repositories.
 
 # Four File status in the repository
 
-![Status](18333fig0201-tn.png)
+![Status](images/18333fig0201-tn.png)
 
 # Initializing a Repository in an Existing Directory
 
@@ -162,7 +162,7 @@ To git@git.math.cnrs.fr:plm/navaro/projet
 ```
 
 # Git Workflow
-![Four stages](four_stages.png)
+![Four stages](images/four_stages.png)
 
 # Cloning an Existing Directory
 Now i change my computer.
@@ -256,8 +256,8 @@ git commit -m 'Some modification is available
 
 # Fast commit
 
-![Index1](index1.png)
-![Index2](index2.png)
+![Index1](images/index1.png)
+![Index2](images/index2.png)
 
 Use it carefully!
 
@@ -321,20 +321,20 @@ git commit -m 'Update and fixed conflicts'
 
 # Git cycle on a single branch
 
-![Cycle](git_cycle.png)
+![Cycle](images/git_cycle.png)
 
 
 # Progressive-stability branching
 
-![Branches](lr-branches-2.png)
+![Branches](images/lr-branches-2.png)
 
 # GitHub Desktop - Modifications view
 
-![Desktop](desktop.png)
+![Desktop](images/desktop.png)
 
 # GitHub Desktop - History view
 
-![Desktop2](desktop2.png)
+![Desktop2](images/desktop2.png)
 
 # Why Git?
 Tracking and controlling changes in the software.
