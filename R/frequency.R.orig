@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+library(MASS)
+source("tab.disjonctif.Rtab")
+=======
 library(MASS) 
 source("tab.disjonctif.R")
+>>>>>>> origin/master
 school <- painters$School
 school.freq <- table(school)
 

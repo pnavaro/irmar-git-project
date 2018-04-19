@@ -224,7 +224,10 @@ beamer.pdf
 article/document.pdf
 
 cpp_project/.dep.inc
+<<<<<<< HEAD
 .Rproj.user
+=======
 .ipynb_checkpoints/cmake-2015-checkpoint.ipynb
 cmake-2015.pdf
 slides.pdf
+>>>>>>> origin/master
