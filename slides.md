@@ -55,15 +55,15 @@
 
 # Configure Git
 
-```git
-git config ---global user.name "Pierre Navaro"
-git config ---global user.email "pierre.navaro@univ-rennes1.fr"
-git config ---global core.editor mvim
-git config ---global merge.tool opendiff
+```bash
+$ git config ---global user.name "Pierre Navaro"
+$ git config ---global user.email "pierre.navaro@univ-rennes1.fr"
+$ git config ---global core.editor mvim
+$ git config ---global merge.tool opendiff
 ```
 
-```Git
-git config ---list
+```bash
+$ git config ---list
    user.name=Pierre Navaro
    user.email=pierre.navaro@univ-rennes1.fr
    core.editor=mvim
@@ -76,54 +76,52 @@ Settings are saved on the computer for all your git repositories.
 
 ![Status](images/18333fig0201-tn.png)
 
-# Initializing a Repository in an Existing Directory
+# Initializing a repository in an existing directory
 
 ```bash
-ls article
-```
-```
-document.tex	figure.png
-```
-git init
-```
-Initialized empty Git repository in /Users/navaro/article/.git/
-```
-git status
-On branch master
-Initial commit
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+$ ls article
+	document.tex	figure.png
+$ git init
+	Initialized empty Git repository in /Users/navaro/article/.git/
+$ git status
+	On branch master
+	Initial commit
+	Untracked files:
+ 	 (use "git add <file>..." to include in what will be committed)
 
-	document.tex
-	figure.png
+		document.tex
+		figure.png
 
-nothing added to commit but untracked files present
-(use "git add" to track)
+	nothing added to commit but untracked files present
+	(use "git add" to track)
 ```
+
 # Adding files in your repository
 
-git add document.tex
-git add figure.png
-git status
-On branch master
-Initial commit
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
+```
+$ git add document.tex
+$ git add figure.png
+$ git status
+	On branch master
+	Initial commit
+	Changes to be committed:
+ 	 (use "git rm --cached <file>..." to unstage)
 
-	new file:   document.tex
-	new file:   figure.png
+		new file:   document.tex
+		new file:   figure.png
 
-git commit -m 'Initial project version'}@>
-[master (root-commit) 9d23b49] Initial project version
- 2 files changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 document.tex
- create mode 100644 figure.png
+$ git commit -m 'Initial project version'}
+	[master (root-commit) 9d23b49] Initial project version
+ 	2 files changed, 0 insertions(+), 0 deletions(-)
+ 	create mode 100644 document.tex
+ 	create mode 100644 figure.png
+```
 
 
-# Cloning a New Directory
+# Cloning a existing repository
 
 ```
-git clone git@git.math.cnrs.fr:plm/navaro/projet
+git clone git@github.com:pnavaro/irmar-git-project.git
 Cloning into 'projet'...
 Initialized empty Git repository in /git/repositories/plm/navaro/projet.git/
 warning: You appear to have cloned an empty repository.
@@ -133,19 +131,16 @@ Checking connectivity... done.
 Now you can add and commit your files.
 
 ```
-cd projet
-./article/*
-git add document.tex
-git add figure.png
-git commit -m 'Initial version of the project'
+$ cd sandbox/your_name
+$ touch document.tex figure.png
+$ git add document.tex
+$ git add figure.png
+$ git commit -m 'Add my contribution to the project'
+```
 
 Your files are NOT present on the server!
-
-git status
-On branch master
-Your branch is based on 'origin/master', but the upstream is gone.
-  (use "git branch --unset-upstream" to fixup)
-nothing to commit, working directory clean
+``
+$ git status
 ```
 
 # Synchronizing your files on the server
