@@ -270,14 +270,14 @@ $ git checkout master</font>
 
 	Switched to branch 'master'
 	Your branch is up-to-date with 'origin/master'.
-	
+
 $ git merge pierre-branch
 
 	Updating 7cef21a..8c6bf81
 	Fast-forward
  	document.tex | 3 +++
  	1 file changed, 3 insertions(+)
- 	
+
 $ git push origin master
 
 	Counting objects: 3, done.
@@ -292,7 +292,7 @@ $ git push origin master
 $ git checkout pierre-branch
 
 	Switched to branch 'pierre-branch'
-	
+
 $ git push origin pierre-branch
 
 $ git branch -a
@@ -310,16 +310,16 @@ The master branch has changed. To get all new updates :
 ```git
 $ git checkout master     
 	Switched to branch 'master'
-	
+
 $ git fetch origin         
 	download changes from repository
-	
+
 $ git merge origin/master  
 	update local branch master
-	
-$ git checkout pierre-branch 
+
+$ git checkout pierre-branch
 	Switched to branch 'pierre-branch'
-	
+
 $ git merge master          
 	update your branch
 ```
@@ -381,7 +381,7 @@ $ git commit -m 'Update and fixed conflicts'
 	- [TeXstudio](www.texstudio.org/)
 	- [JetBrains](https://www.jetbrains.com/)
 
-# Two useful commands
+# Some useful commands
 - Showing which files have changed between git branches
 
 ```git
@@ -393,8 +393,15 @@ $ git diff --name-status master..mybranch
 $ git diff mybranch master -- myfile.F90
 ```
 
-- Remove all ignored files
+- Remove all ignored files (do it after a commit)
 
 ```
 $ git clean -xdf
+```
+
+- To revert to a previous commit, ignoring any changes:
+
+```
+$ git checkout myfile.cpp
+$ git reset --hard
 ```
