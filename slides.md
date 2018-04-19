@@ -133,14 +133,16 @@ Now you can add and commit your files.
 ```
 $ cd sandbox/your_name
 $ touch document.tex figure.png
-$ git add document.tex
-$ git add figure.png
+$ git add document.tex figure.png
 $ git commit -m 'Add my contribution to the project'
 ```
 
 Your files are NOT present on the server!
-``
+```
 $ git status
+	On branch master
+	Your branch is ahead of 'origin/master' by 1 commit.
+  	(use "git push" to publish your local commits)
 ```
 
 # Synchronizing your files on the server
