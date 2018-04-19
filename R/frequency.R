@@ -1,4 +1,5 @@
-library(MASS) 
+library(MASS)
+source("tab.disjonctif.Rtab")
 school <- painters$School
 school.freq <- table(school)
 
