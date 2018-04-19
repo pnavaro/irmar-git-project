@@ -121,14 +121,14 @@ $ git commit -m 'Initial project version'}
 # Cloning a existing repository
 
 ```
-git clone git@github.com:pnavaro/irmar-git-project.git
-Cloning into 'projet'...
-Initialized empty Git repository in /git/repositories/plm/navaro/projet.git/
-warning: You appear to have cloned an empty repository.
-Checking connectivity... done.
+$ git clone git@github.com:pnavaro/irmar-git-project.git
+	Cloning into 'projet'...
+	Initialized empty Git repository in /git/repositories/plm/navaro/projet.git/
+	warning: You appear to have cloned an empty repository.
+	Checking connectivity... done.
 ```
 
-Now you can add and commit your files.
+# Add and commit your files.
 
 ```
 $ cd sandbox/your_name
@@ -138,72 +138,75 @@ $ git commit -m 'Add my contribution to the project'
 ```
 
 Your files are NOT present on the server!
-```
+
+~~~
 $ git status
 	On branch master
 	Your branch is ahead of 'origin/master' by 1 commit.
   	(use "git push" to publish your local commits)
-```
+~~~
 
 # Synchronizing your files on the server
 
- By default you are on the "master" branch.
+By default you are on the "master" branch.
 
 ```
-git branch
-* master
+$ git branch
+	* master
+```
 Upload your files to the server:
-git push origin master
-To git@git.math.cnrs.fr:plm/navaro/projet
- * [new branch]      master -> master
+
+```
+$ git push origin master
+	...
+	To https://github.com/pnavaro/irmar-git-project
+   		ae2ce3c..ed796ea  master -> master
 ```
 
 # Git Workflow
-![Four stages](images/four_stages.png)
+<div style="text-align:center"><img src ="images/four_stages.png" /></div>
 
 # Cloning an Existing Directory
 Now i change my computer.
-```
-git clone git@git.math.cnrs.fr:plm/navaro/projet
-Cloning into 'projet'...
-remote: Counting objects: 3, done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 0), reused 0 (delta 0)
-Receiving objects: 100% (3/3), 246 bytes | 0 bytes/s, done.
-Checking connectivity... done.
-cd projet
-ls
-document.tex	figure.png
-git log
-commit 7cef21ac9119ef2fb97065c9e5549550e2f603fd
-Author: Pierre Navaro <pierre.navaro@univ-rennes1.fr>
-Date:   Fri Oct 2 13:51:43 2015 +0200
 
-    Initial version of the project
+```
+$ git clone git@github.com:pnavaro/irmar-git-project.git
+	Cloning into 'irmar-git-project'...
+$ cd irmar-git-project
+$ git log
+	commit ed796ea1cbd15c8f7ec040b303c950569527012c (HEAD -> master, origin/master, origin/HEAD)
+	Author: Pierre Navaro <pierre.navaro@univ-rennes1.fr>
+	Date:   Thu Apr 19 13:26:01 2018 +0200
+
+    	Add my contribution to the project
 ```
 
 # Display and Create a Branch
 
 Display all branches :
+
 ```
-git branch -a
-* master
-  remotes/origin/HEAD -> origin/master
-  remotes/origin/master
+$ git branch -a
+	* master
+  		remotes/origin/HEAD -> origin/master
+  		remotes/origin/master
 ```
 
 Create your own branch and switch:
+
 ```
-git branch pierre-branch}@>
-git checkout pierre-branch}@>
+$ git branch pierre-branch
+$ git checkout pierre-branch
 ```
 
 Switched to branch 'pierre-branch'
 
 ```
-git branch
-  master
-* pierre-branch
+$ git branch
+  	master
+	* pierre-branch
+```
+
 Files could be different or non existant between branches but are at the same place on the file system
 
 
@@ -212,90 +215,92 @@ Files could be different or non existant between branches but are at the same pl
 Modify the file document.tex
 
 ```
-git status
-On branch pierre-branch
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-	modified:   document.tex
-no changes added to commit (use "git add" and/or "git commit -a")
+$ git status
+	On branch pierre-branch
+	Changes not staged for commit:
+ 	 (use "git add <file>..." to update what will be committed)
+ 	 (use "git checkout -- <file>..." to discard changes in working directory)
+		modified:   document.tex
+	no changes added to commit (use "git add" and/or "git commit -a")
 
+$ git diff
+	diff --git a/document.tex b/document.tex
+	index a608114..e69de29 100644
+	--- a/document.tex
+	+++ b/document.tex
+	@@ -1,3 +0,0 @@
+	-Exemple Git pour la journee de rentree
 ```
-git diff
-diff --git a/document.tex b/document.tex
-index a608114..e69de29 100644
---- a/document.tex
-+++ b/document.tex
-@@ -1,3 +0,0 @@
--Exemple Git pour la journee de rentree
 
 # Locally saving your modifications
 
 ```
-git add document.tex
+$ git add document.tex
 ```
 Checking which files are ready to be committed.
 
 ```
-git status
+$ git status
 On branch pierre-branch
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 	modified:   document.tex
 ```
-Now save your work on the local branch.
+Now save your work, the branch is local.
 
 ```
-git commit -m 'Some modification is available
+$ git commit -m 'Some modifications'
 [pierre-branch 8c6bf81] Some modification is available
  1 file changed, 3 insertions(+)
 ```
 
 # Fast commit
 
-![Index1](images/index1.png)
-![Index2](images/index2.png)
+<img src='images/index1.png' width=50%><img src='images/index2.png' width=50%>
 
 Use it carefully!
 
-How to share your work and make it available on the server?
+# Share your work and make it available on the server
 
-# Option 1 : Merge to the main branch and push
+## Option 1 : Merge to the main branch and push
 
-```
-git checkout master
-Switched to branch 'master'
-Your branch is up-to-date with 'origin/master'.
-git merge pierre-branch
-Updating 7cef21a..8c6bf81
-Fast-forward
- document.tex | 3 +++
- 1 file changed, 3 insertions(+)
-git push origin master
-Counting objects: 3, done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 351 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To git@git.math.cnrs.fr:plm/navaro/projet
-   7cef21a..8c6bf81  master -> master
-```
-
-# Option 2 : Push your branch to the server
 
 ```
-git checkout pierre-branch
-Switched to branch 'pierre-branch'
-git push origin pierre-branch
-Total 0 (delta 0), reused 0 (delta 0)
-To git@git.math.cnrs.fr:plm/navaro/projet
- * [new branch]      pierre-branch -> pierre-branch
-git branch -a
-  master
-* pierre-branch
-  remotes/origin/HEAD -> origin/master
-  remotes/origin/master
-  remotes/origin/pierre-branch
+$ git checkout master</font>
+
+	Switched to branch 'master'
+	Your branch is up-to-date with 'origin/master'.
+	
+$ git merge pierre-branch
+
+	Updating 7cef21a..8c6bf81
+	Fast-forward
+ 	document.tex | 3 +++
+ 	1 file changed, 3 insertions(+)
+ 	
+$ git push origin master
+
+	Counting objects: 3, done.
+	...
+```
+
+# Share your work and make it available on the server
+
+## Option 2 : Push your branch to the server
+
+```
+$ git checkout pierre-branch
+
+	Switched to branch 'pierre-branch'
+	
+$ git push origin pierre-branch
+
+$ git branch -a
+  	master
+	* pierre-branch
+  	remotes/origin/HEAD -> origin/master
+  	remotes/origin/master
+  	remotes/origin/pierre-branch
 ```
 
 # Updating from the Repository
@@ -303,17 +308,35 @@ git branch -a
 The master branch has changed. To get all new updates :
 
 ```git
-git checkout master      (change to master)
-Switched to branch 'master'
-git fetch origin         (download changes from repository)
-git merge origin/master  (update local branch master)
-git checkout pierre-branch (back to your branch)
-Switched to branch 'pierre-branch'
-git merge master          (update your branch)
+$ git checkout master     
+	Switched to branch 'master'
+	
+$ git fetch origin         
+	download changes from repository
+	
+$ git merge origin/master  
+	update local branch master
+	
+$ git checkout pierre-branch 
+	Switched to branch 'pierre-branch'
+	
+$ git merge master          
+	update your branch
+```
+If you did not push your branch, use `rebase` instead of `merge`
+
+# Merge conflicts
+
 If you have conflict, no problem just do :
-git mergetool
+
+```
+$ git mergetool
+```
+
 A nice editor helps you to choose the right version. Close and :
-git commit -m 'Update and fixed conflicts'
+
+```
+$ git commit -m 'Update and fixed conflicts'
 ```
 
 # Git cycle on a single branch
@@ -325,13 +348,6 @@ git commit -m 'Update and fixed conflicts'
 
 ![Branches](images/lr-branches-2.png)
 
-# GitHub Desktop - Modifications view
-
-![Desktop](images/desktop.png)
-
-# GitHub Desktop - History view
-
-![Desktop2](images/desktop2.png)
 
 # Why Git?
 
@@ -341,24 +357,44 @@ git commit -m 'Update and fixed conflicts'
 - Multiple Backups.
 - It's impossible to get anything out of Git other than the exact bits you put in.
 - Staging Area : intermediate index between working directory and repository.
+- Pull-request is a nice feature for code reviewing and protect the stable branch.
 
-## Why not
-- Sometimes confusing for new users.
-- Crazy command line syntax
-- Simple tasks need so many commands
-- Git history is a bunch of lies
+# Why not
+
+- Sometimes confusing for new users coming from CVS or subversion.
+- Crazy command line syntax.
+- Simple tasks need many commands.
+- Git history is often strange.
+- It is possible to destroy the repository on the remote server.
 - Power for the maintainer, at the expense of the contributor.
 
 # Some hints.
 
 - Install bash-completion and source git-prompt.sh.
-- use [GitHub Desktop](https://desktop.github.com/)
+- Use Gui tools:
+	- [GitHub Desktop](https://desktop.github.com/)
+	- [Sourcetree](https://fr.atlassian.com/software/sourcetree)
+	- [GitKraken](https://www.gitkraken.com/)
+- VCS plugin of IDE
+	- [RStudio](https://www.rstudio.com/)
+	- [Eclipse](https://www.eclipse.org/downloads/)
+	- [TeXstudio](www.texstudio.org/)
+	- [JetBrains](https://www.jetbrains.com/)
 
+# Two useful commands
 - Showing which files have changed between git branches
+
 ```git
-git diff --name-status master..branch
+$ git diff --name-status master..mybranch
 ```
 - Compare the master version of a file to my current branch version
+
 ```git
-git diff mybranch master -- myfile.F90
+$ git diff mybranch master -- myfile.F90
+```
+
+- Remove all ignored files
+
+```
+$ git clean -xdf
 ```
