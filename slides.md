@@ -55,14 +55,14 @@
 
 # Configure Git
 
-```bash
+```git
 git config ---global user.name "Pierre Navaro"
 git config ---global user.email "pierre.navaro@univ-rennes1.fr"
 git config ---global core.editor mvim
 git config ---global merge.tool opendiff
 ```
 
-```bash
+```Git
 git config ---list
    user.name=Pierre Navaro
    user.email=pierre.navaro@univ-rennes1.fr
@@ -305,7 +305,7 @@ git branch -a
 
 The master branch has changed. To get all new updates :
 
-```
+```git
 git checkout master      (change to master)
 Switched to branch 'master'
 git fetch origin         (download changes from repository)
@@ -345,7 +345,7 @@ git commit -m 'Update and fixed conflicts'
 - It's impossible to get anything out of Git other than the exact bits you put in.
 - Staging Area : intermediate index between working directory and repository.
 
-## Why not 
+## Why not
 - Sometimes confusing for new users.
 - Crazy command line syntax
 - Simple tasks need so many commands
