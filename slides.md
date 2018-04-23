@@ -16,6 +16,7 @@
 - ShareLaTeX (https://fr.sharelatex.com)
 - Authorea (https://www.authorea.com)
 - Overleaf (https://www.overleaf.com)
+- PLMLateX (https://plmlatex.math.cnrs.fr/)
 
 # About Version Control
 
@@ -29,7 +30,7 @@
 
 # Local Version Control Systems
 
-![Loca](images/local.png)
+![Local](images/local.png){width=50%}
 
 - One of the most saving popular was a system called RCS
 - Available with the Developer Tools with Mac OS X
@@ -37,7 +38,8 @@
 
 # Centralized Version Control Systems
 
-![CVS](images/cvs.png)
+![CVS](images/cvs.png){width=50%}
+
 - Clients check out files from a central place.
 - You know what everyone else on the project is doing
 - A single server contains all the versioned files.
@@ -47,23 +49,27 @@
 
 # Distributed Version Control Systems
 
-![Git](images/git.png)
+![Git](images/git.png){width=50%}
+
 - Clients fully mirror the repository.
 - You can collaborate with different groups of people in different ways simultaneously within the same project.
 - No need of network connection.
 - Multiple backups.
+ 
 
 # Configure Git
 
+Install git on windows https://gitforwindows.org
+
 ```bash
-$ git config ---global user.name "Pierre Navaro"
-$ git config ---global user.email "pierre.navaro@univ-rennes1.fr"
-$ git config ---global core.editor mvim
-$ git config ---global merge.tool opendiff
+$ git config --global user.name "Pierre Navaro"
+$ git config --global user.email "pierre.navaro@univ-rennes1.fr"
+$ git config --global core.editor mvim
+$ git config --global merge.tool opendiff
 ```
 
 ```bash
-$ git config ---list
+$ git config --list
    user.name=Pierre Navaro
    user.email=pierre.navaro@univ-rennes1.fr
    core.editor=mvim
@@ -78,7 +84,7 @@ Settings are saved on the computer for all your git repositories.
 
 # Initializing a repository in an existing directory
 
-```bash
+```
 $ ls article
 	document.tex	figure.png
 $ git init
@@ -264,7 +270,6 @@ Use it carefully!
 
 ## Option 1 : Merge to the main branch and push
 
-
 ```
 $ git checkout master</font>
 
@@ -348,6 +353,33 @@ $ git commit -m 'Update and fixed conflicts'
 
 ![Branches](images/lr-branches-2.png)
 
+# Stash
+Use itwhen you want to record the current state of the working directory and the index.
+
+- Modify a file in the repository and save it with
+
+```
+$ git stash
+```
+- You can display saved changes with
+
+```
+$ git stash show
+```
+
+- Apply the modifications with
+
+```
+git stash pop (or apply)
+```
+
+or drop them with
+
+```
+$ git stash drop
+```
+
+
 
 # Why Git?
 
@@ -368,28 +400,17 @@ $ git commit -m 'Update and fixed conflicts'
 - It is possible to destroy the repository on the remote server.
 - Power for the maintainer, at the expense of the contributor.
 
-# Some hints.
-
-- Install bash-completion and source git-prompt.sh.
-- Use Gui tools:
-	- [GitHub Desktop](https://desktop.github.com/)
-	- [Sourcetree](https://fr.atlassian.com/software/sourcetree)
-	- [GitKraken](https://www.gitkraken.com/)
-- VCS plugin of IDE
-	- [RStudio](https://www.rstudio.com/)
-	- [Eclipse](https://www.eclipse.org/downloads/)
-	- [TeXstudio](www.texstudio.org/)
-	- [JetBrains](https://www.jetbrains.com/)
 
 # Some useful commands
+
 - Showing which files have changed between git branches
 
-```git
+```
 $ git diff --name-status master..mybranch
 ```
 - Compare the master version of a file to my current branch version
 
-```git
+```
 $ git diff mybranch master -- myfile.F90
 ```
 
@@ -405,3 +426,16 @@ $ git clean -xdf
 $ git checkout myfile.cpp
 $ git reset --hard
 ```
+
+# Git through IDE
+
+- Install bash-completion and source git-prompt.sh.
+- Use Gui tools:
+	- [GitHub Desktop](https://desktop.github.com/)
+	- [Sourcetree](https://fr.atlassian.com/software/sourcetree)
+	- [GitKraken](https://www.gitkraken.com/)
+- VCS plugin of IDE
+	- [RStudio](https://www.rstudio.com/)
+	- [Eclipse](https://www.eclipse.org/downloads/)
+	- [TeXstudio](www.texstudio.org/)
+	- [JetBrains](https://www.jetbrains.com/)

@@ -231,3 +231,5 @@ slides.pdf
 build/
 cpp_project/.idea/
 cpp_project/cmake-build-debug/
+
+.ipynb_checkpoints/git-slides-checkpoint.ipynb
