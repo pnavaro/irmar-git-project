@@ -49,7 +49,7 @@
 
 # Distributed Version Control Systems
 
-![Git](images/git.png){width=50%}
+![Git](images/git.png){width=30%}
 
 - Clients fully mirror the repository.
 - You can collaborate with different groups of people in different ways simultaneously within the same project.
@@ -80,7 +80,7 @@ Settings are saved on the computer for all your git repositories.
 
 # Four File status in the repository
 
-![Status](images/18333fig0201-tn.png)
+![Status](images/18333fig0201-tn.png){width=50%}
 
 # Initializing a repository in an existing directory
 
@@ -170,7 +170,7 @@ $ git push origin master
 ```
 
 # Git Workflow
-<div style="text-align:center"><img src ="images/four_stages.png" /></div>
+![4-stages](images/four_stages.png){width=30%}
 
 # Cloning an Existing Directory
 Now i change my computer.
@@ -262,7 +262,8 @@ $ git commit -m 'Some modifications'
 
 # Fast commit
 
-<img src='images/index1.png' width=50%><img src='images/index2.png' width=50%>
+![index1](images/index1.png){width=50%}
+![index2](images/index2.png){width=50%}
 
 Use it carefully!
 
@@ -346,12 +347,12 @@ $ git commit -m 'Update and fixed conflicts'
 
 # Git cycle on a single branch
 
-![Cycle](images/git_cycle.png)
+![Cycle](images/git_cycle.png){width=50%}
 
 
 # Progressive-stability branching
 
-![Branches](images/lr-branches-2.png)
+![Branches](images/lr-branches-2.png){width=50%}
 
 # Stash
 Use itwhen you want to record the current state of the working directory and the index.
