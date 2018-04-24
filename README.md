@@ -9,3 +9,5 @@ pandoc -s --mathml -i -t dzslides slides.md -o dzslides_version.html
 pandoc -s --webtex -i -t slidy slides.md -o slidy_version.html
 pandoc -s --mathjax -i -t revealjs slides.md -o revealjs_version.html
 ```
+
+Josselin
