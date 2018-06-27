@@ -14,4 +14,5 @@ pandoc -s --mathjax -i -t revealjs slides.md -o revealjs_version.html
 
 Qu'est ce que c'est que cela ?
 
+Je le modife
 Pierre Navaro
